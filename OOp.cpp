@@ -9,6 +9,7 @@ class AbstractionPromotion {
 
 class Employee : AbstractionPromotion {
     private:      
+        
         string Name;
         string Company;
         int Age;
@@ -54,18 +55,37 @@ class Employee : AbstractionPromotion {
     }
 };
 
+class Developer : Employee {
+    public:
+        string FavProgrammingLang;
+        Developer(string name, string company, int age, string favProgrammingLang)
+            :Employee(name, company, age)
+        {
+            this->FavProgrammingLang = favProgrammingLang;
+        }
+
+        void FixBug() {
+            cout << getName() << ", Fix the Bug using " << FavProgrammingLang << " language" << endl;
+        }
+};
+
 int main() {
-    Employee employee1 = Employee("Aditya", "Self Study", 22);
+    // Employee employee1 = Employee("Aditya", "Self Study", 22);
     // employee1.Introduction();
 
-    Employee employee2 = Employee("Rishi", "Hostel", 21);
+    // Employee employee2 = Employee("Rishi", "Hostel", 21);
     // employee2.Introduction();
 
-    employee1.setAge(26);
+    // employee1.setAge(26);
 
     // cout << employee1.getName() << " is " << employee1.getAge() << " years old now ";
 
-    employee1.AskForPromotion();
-    employee2.AskForPromotion();
+    // employee1.AskForPromotion();
+    // employee2.AskForPromotion();
+
+    Developer d = Developer("Aditya" , "Self-Study", 22, "C++");
+
+    d.FixBug();
+
 
 }
