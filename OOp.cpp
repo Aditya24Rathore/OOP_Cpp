@@ -9,11 +9,11 @@ class AbstractionPromotion {
 
 class Employee : AbstractionPromotion {
     private:      
-        
-        string Name;
         string Company;
         int Age;
 
+    protected:
+        string Name;
     public:
 
     void setName(string name) { //setter
@@ -53,6 +53,10 @@ class Employee : AbstractionPromotion {
             cout << Name << ", Sorry! No promotion for you." << endl;
 
     }
+
+    virtual void Work() {
+        cout << Name << " is working on projects" << endl; 
+    }
 };
 
 class Developer:public Employee {
@@ -65,25 +69,34 @@ class Developer:public Employee {
         }
 
         void FixBug() {
-            cout << getName() << ", Fix the Bug using " << FavProgrammingLang << " language" << endl;
+            cout << Name << ", Fix the Bug using " << FavProgrammingLang << " language" << endl;
         }
+
+        void Work() {
+        cout << Name << " is Fixing Bugs in " << FavProgrammingLang << endl; 
+    }
 };
 
 class Teacher:public Employee {
     public:
         string Subject;
         void PrepareLesson() {
-            cout << getName() << " is prepareing " << Subject << " lesson" << endl;
+            cout << Name << " is prepareing " << Subject << " lesson" << endl;
         }
+        
         Teacher(string name, string company, int age, string subject)
             :Employee(name, company, age)
         {
             this->Subject = subject;
         }
+
+        void Work() {
+        cout << Name << " teaches " << Subject << endl; 
+    }
 };
 
 int main() {
-    // Employee employee1 = Employee("Aditya", "Self Study", 22);
+    Employee employee1 = Employee("Aditya", "Self Study", 22);
     // employee1.Introduction();
 
     // Employee employee2 = Employee("Rishi", "Hostel", 21);
@@ -96,12 +109,22 @@ int main() {
     // employee1.AskForPromotion();
     // employee2.AskForPromotion();
 
-    // Developer d = Developer("Aditya" , "Self-Study", 22, "C++");
+    Developer dev = Developer("Aditya" , "Self-Study", 22, "C++");
 
-    // d.FixBug();
-    // d.AskForPromotion();
+    // dev.FixBug();
+    // dev.AskForPromotion();
 
-    Teacher t = Teacher("Rishi", "UIT", 22, "IOT");
-    t.PrepareLesson();
+    Teacher tech = Teacher("Rishi", "UIT", 22, "IOT");
+    // tech.PrepareLesson();
+    // tech.AskForPromotion();
 
+    // employee1.Work();
+    // dev.Work();
+    // tech.Work();
+
+    Employee* e1 = &dev;
+    Employee* e2 = &tech;
+
+    e1->Work();
+    e2->Work();
 }
