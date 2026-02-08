@@ -14,9 +14,9 @@ class Employee{
     }
 
     Employee(string name, string company, int age) {
-        Name = name;
-        Company = company;
-        Age = age;
+        this->Name = name;
+        this->Company = company;
+        this->Age = age;
     }
 };
 
