@@ -2,10 +2,29 @@
 using namespace std;
 
 class Employee{
-  public:
-    string Name;
-    string Company;
-    int Age;
+    private:      
+        string Name;
+        string Company;
+        int Age;
+
+    public:
+
+    void setName(string name) { //setter
+        this->Name = name;
+    }
+
+    string getName() { //getter
+        return Name;
+    }
+
+    void setAge(int age) {
+        if(age >= 18)
+        this->Age = age;
+    }
+
+    int getAge() {
+        return Age;
+    }
 
     void Introduction() {
         cout << "Name - " << Name << endl;
@@ -26,4 +45,8 @@ int main() {
 
     Employee employee2 = Employee("Rishi", "Hostel", 21);
     employee2.Introduction();
+
+    employee1.setAge(24);
+
+    cout << employee1.getName() << " is " << employee1.getAge() << " years old now ";
 }
