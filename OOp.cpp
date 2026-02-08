@@ -1,7 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Employee{
+class AbstractionPromotion {
+
+    virtual void AskForPromotion() = 0;
+
+};
+
+class Employee : AbstractionPromotion {
     private:      
         string Name;
         string Company;
@@ -37,16 +43,29 @@ class Employee{
         this->Company = company;
         this->Age = age;
     }
+
+    void AskForPromotion() {
+
+        if(Age >= 25)
+            cout <<  Name << ", got the promotion!" << endl;
+        else
+            cout << Name << ", Sorry! No promotion for you." << endl;
+
+    }
 };
 
 int main() {
     Employee employee1 = Employee("Aditya", "Self Study", 22);
-    employee1.Introduction();
+    // employee1.Introduction();
 
     Employee employee2 = Employee("Rishi", "Hostel", 21);
-    employee2.Introduction();
+    // employee2.Introduction();
 
-    employee1.setAge(24);
+    employee1.setAge(26);
 
-    cout << employee1.getName() << " is " << employee1.getAge() << " years old now ";
+    // cout << employee1.getName() << " is " << employee1.getAge() << " years old now ";
+
+    employee1.AskForPromotion();
+    employee2.AskForPromotion();
+
 }
