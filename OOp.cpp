@@ -55,7 +55,7 @@ class Employee : AbstractionPromotion {
     }
 };
 
-class Developer : Employee {
+class Developer:public Employee {
     public:
         string FavProgrammingLang;
         Developer(string name, string company, int age, string favProgrammingLang)
@@ -66,6 +66,19 @@ class Developer : Employee {
 
         void FixBug() {
             cout << getName() << ", Fix the Bug using " << FavProgrammingLang << " language" << endl;
+        }
+};
+
+class Teacher:public Employee {
+    public:
+        string Subject;
+        void PrepareLesson() {
+            cout << getName() << " is prepareing " << Subject << " lesson" << endl;
+        }
+        Teacher(string name, string company, int age, string subject)
+            :Employee(name, company, age)
+        {
+            this->Subject = subject;
         }
 };
 
@@ -83,9 +96,12 @@ int main() {
     // employee1.AskForPromotion();
     // employee2.AskForPromotion();
 
-    Developer d = Developer("Aditya" , "Self-Study", 22, "C++");
+    // Developer d = Developer("Aditya" , "Self-Study", 22, "C++");
 
-    d.FixBug();
+    // d.FixBug();
+    // d.AskForPromotion();
 
+    Teacher t = Teacher("Rishi", "UIT", 22, "IOT");
+    t.PrepareLesson();
 
 }
