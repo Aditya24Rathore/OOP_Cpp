@@ -97,30 +97,30 @@ class Teacher:public Employee {
 
 int main() {
     Employee employee1 = Employee("Aditya", "Self Study", 22);
-    // employee1.Introduction();
+    employee1.Introduction();
 
-    // Employee employee2 = Employee("Rishi", "Hostel", 21);
-    // employee2.Introduction();
+    Employee employee2 = Employee("Rishi", "Hostel", 21);
+    employee2.Introduction();
 
-    // employee1.setAge(26);
+    employee1.setAge(26);
 
-    // cout << employee1.getName() << " is " << employee1.getAge() << " years old now ";
+    cout << employee1.getName() << " is " << employee1.getAge() << " years old now ";
 
-    // employee1.AskForPromotion();
-    // employee2.AskForPromotion();
+    employee1.AskForPromotion();
+    employee2.AskForPromotion();
 
     Developer dev = Developer("Aditya" , "Self-Study", 22, "C++");
 
-    // dev.FixBug();
-    // dev.AskForPromotion();
+    dev.FixBug();
+    dev.AskForPromotion();
 
     Teacher tech = Teacher("Rishi", "UIT", 22, "IOT");
-    // tech.PrepareLesson();
-    // tech.AskForPromotion();
+    tech.PrepareLesson();
+    tech.AskForPromotion();
 
-    // employee1.Work();
-    // dev.Work();
-    // tech.Work();
+    employee1.Work();
+    dev.Work();
+    tech.Work();
 
     Employee* e1 = &dev;
     Employee* e2 = &tech;
