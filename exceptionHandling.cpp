@@ -7,7 +7,7 @@ int main() {
 
     try{
         if(b == 0)
-              throw " division by 0 error\n";
+              throw " division by 0 not allowed error!!\n";
         int result = a/b;
         cout << result;
     }
