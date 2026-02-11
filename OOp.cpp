@@ -109,7 +109,7 @@ int main() {
     employee1.AskForPromotion();
     employee2.AskForPromotion();
 
-    Developer dev = Developer("Aditya" , "Self-Study", 22, "C++");
+    Developer dev = Developer("Aditya", "Self-Study", 22, "C++");
 
     dev.FixBug();
     dev.AskForPromotion();
