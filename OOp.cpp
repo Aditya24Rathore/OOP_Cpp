@@ -8,12 +8,16 @@ class AbstractionPromotion {
 };
 
 class Employee : AbstractionPromotion {
+
     private:      
+
         string Company;
         int Age;
 
     protected:
+
         string Name;
+        
     public:
 
     void setName(string name) { //setter
@@ -60,8 +64,10 @@ class Employee : AbstractionPromotion {
 };
 
 class Developer:public Employee {
+
     public:
         string FavProgrammingLang;
+
         Developer(string name, string company, int age, string favProgrammingLang)
             :Employee(name, company, age)
         {
@@ -78,8 +84,10 @@ class Developer:public Employee {
 };
 
 class Teacher:public Employee {
+
     public:
         string Subject;
+
         void PrepareLesson() {
             cout << Name << " is prepareing " << Subject << " lesson" << endl;
         }
