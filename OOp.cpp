@@ -20,11 +20,11 @@ class Employee : AbstractionPromotion {
         
     public:
 
-    void setName(string name) { //setter
+    void setName(string name) { //Setter
         this->Name = name;
     }
 
-    string getName() { //getter
+    string getName() { //Getter
         return Name;
     }
 
