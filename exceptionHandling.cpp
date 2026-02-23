@@ -12,7 +12,7 @@ int main() {
         cout << result;
     }
     catch(const char* e) {
-        cout << "exception caught" << e << endl;
+        cout << "Exception Caught" << e << endl;
     }
     return 0;
 }
