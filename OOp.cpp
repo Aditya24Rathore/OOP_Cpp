@@ -104,7 +104,7 @@ class Teacher:public Employee {
 };
 
 int main() {
-    Employee employee1 = Employee("Aditya", "Self Study", 22);
+    Employee employee1 = Employee("Aditya", "CLG", 22);
     employee1.Introduction();
 
     Employee employee2 = Employee("Rishi", "Hostel", 21);
