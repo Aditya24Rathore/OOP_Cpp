@@ -25,6 +25,7 @@ int main() {
         int result = Number1/Number2;
         cout << result;
     }
+    
     // CATCHING EXCEPTION: Handle the thrown exception
     catch(const char* e) {  // Catch string literal exceptions
         cout << "Exception Caught" << e << endl;
