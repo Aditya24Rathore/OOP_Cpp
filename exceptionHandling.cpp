@@ -11,7 +11,7 @@
 using namespace std;
 
 int main() {
-    int number1 = 10;
+    int number1 = 120;
     int number2 = 0;
 
     // try-catch block: handles division by zero
