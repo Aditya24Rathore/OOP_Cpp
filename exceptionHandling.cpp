@@ -25,6 +25,7 @@ int main() {
         cout << "Result: " << result << endl;
     }
     catch (const runtime_error& e) {
+        
         cout << "Exception Caught: " << e.what() << endl;
     }
 
