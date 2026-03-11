@@ -14,13 +14,13 @@ int main() {
     int number1 = 150;
     int number2 = 0;
 
-    //! try-catch block: handles division by zero
+    // try-catch block: handles division by zero
     try {
         if (number2 == 0) {
             throw runtime_error("Division by 0 not allowed!");
         }
 
-        //! This line won't execute if exception is thrown
+        // This line won't execute if exception is thrown
         int result = number1 / number2;
         cout << "Result: " << result << endl;
     }
